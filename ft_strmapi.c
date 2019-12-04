@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/23 17:02:38 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/27 11:50:00 by dtony            ###   ########.fr       */
+/*   Created: 2019/12/04 15:09:14 by dtony             #+#    #+#             */
+/*   Updated: 2019/12/04 15:19:20 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		ng;
-	int		nb;
+	unsigned int	i;
+	char			*map;
 
 	i = 0;
-	ng = 0;
-	nb = 0;
-	while (str[i] <= ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		ng = 1;
-	if (str[i + 1] < '0' || str[i + 1] > '9')
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
+	if (s)
 	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
+		if (!(map = (char *)malloc(sizeof(s) + 1)))
+			return (NULL);
+		while (s[i++])
+			map[i] = f(i, map[i]);
+		map[i] = '\0';
+		return (map);
 	}
-	return (ng == 1 ? -nb : nb);
+	return (NULL);
 }

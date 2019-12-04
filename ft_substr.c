@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/23 17:02:38 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/27 11:50:00 by dtony            ###   ########.fr       */
+/*   Created: 2019/11/27 11:53:31 by dtony             #+#    #+#             */
+/*   Updated: 2019/11/27 12:08:32 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		ng;
-	int		nb;
+	size_t	i;
+	char	*sub;
 
 	i = 0;
-	ng = 0;
-	nb = 0;
-	while (str[i] <= ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		ng = 1;
-	if (str[i + 1] < '0' || str[i + 1] > '9')
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
-	}
-	return (ng == 1 ? -nb : nb);
+	if (!(sub = malloc(sizeof(*sub) * len + 1)))
+		return (NULL);
+	while (i++ <= len)
+		sub[i] = s[start + i];
+	sub[i] = '\0';
+	return (sub);
 }

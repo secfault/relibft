@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/23 17:02:38 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/27 11:50:00 by dtony            ###   ########.fr       */
+/*   Created: 2019/11/27 12:09:33 by dtony             #+#    #+#             */
+/*   Updated: 2019/11/27 12:17:01 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		i;
-	int		ng;
-	int		nb;
+	int		j;
+	char	*join;
 
 	i = 0;
-	ng = 0;
-	nb = 0;
-	while (str[i] <= ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		ng = 1;
-	if (str[i + 1] < '0' || str[i + 1] > '9')
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
-	}
-	return (ng == 1 ? -nb : nb);
+	j = 0;
+	if (!(join = malloc(ft_strlen(s1) + ft_strlen(s2) - 1)))
+		return (NULL);
+	while (s1[i++])
+		join[i] = s1[i];
+	while (s2[j++])
+		join[i + j] = s2[j];
+	join[i + j] = '\0';
+	return (join);
 }
