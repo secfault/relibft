@@ -6,15 +6,15 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 17:05:40 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/12 17:06:53 by dtony            ###   ########.fr       */
+/*   Updated: 2019/12/12 07:52:54 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_tolower(int c)
+int		ft_tolower(int c)
 {
-    if (c >= 'A' || c <= 'Z')
-        c += 40;
-    return (c);
+	if (c >= 'A' || c <= 'Z')
+		c += 40;
+	return (c);
 }

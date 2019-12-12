@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/27 12:41:31 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/27 13:16:49 by dtony            ###   ########.fr       */
+/*   Created: 2019/12/12 07:52:26 by dtony             #+#    #+#             */
+/*   Updated: 2019/12/12 07:52:32 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static size_t	ft_sizer(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	size;
+	size_t		i;
+	size_t		size;
 
 	i = 0;
 	size = 0;
@@ -29,11 +29,11 @@ static size_t	ft_sizer(char const *s1, char const *set)
 	return (size);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	size;
-	char	*trim;
+	size_t		i;
+	size_t		size;
+	char		*trim;
 
 	i = 0;
 	size = ft_sizer(s1, set) + 1;

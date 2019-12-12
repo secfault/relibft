@@ -6,7 +6,7 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 13:55:26 by dtony             #+#    #+#             */
-/*   Updated: 2019/11/27 14:39:28 by dtony            ###   ########.fr       */
+/*   Updated: 2019/12/12 07:46:47 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_sizer(int nb)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		ln;
 	int		ncpy;
